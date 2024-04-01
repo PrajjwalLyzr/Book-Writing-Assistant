@@ -21,7 +21,7 @@ image = Image.open("./logo/lyzr-logo.png")
 st.image(image, width=150)
 
 # App title and introduction
-st.title("Book Writing Assistant by Lyzr")
+st.title("Book Writing Assistant by Lyzr 📖")
 st.markdown("### Welcome to the Book Writing Assistant!")
 st.markdown("Book Writing Assistant your AI muse, offering writing assistance, and even image generation to fuel your creativity.!!!")
 
