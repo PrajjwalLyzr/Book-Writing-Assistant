@@ -110,7 +110,7 @@ def book_writing_assistant(genre):
         input_type=InputType.TEXT,
         model=open_ai_model_image,
         log_output=True,
-        instructions="Generate an Book Cover Image which is suitable according to the given description. Capture every detail. Minimalistic style. [IMPORTANT!] Avoid any text or numbers in the image.",
+        instructions="Generate an Image which is suitable to the given description. Capture every detail. Minimalistic style. [IMPORTANT!] Avoid any text or numbers in the image.",
     )
 
     logger = Logger()
@@ -141,19 +141,22 @@ if __name__ == "__main__":
 
         # DISPLAY OUTPUT
         title_output = generated_output[0]['task_output']
-        st.subheader('Suggested Title')
+        st.header('Suggested Titles')
         st.write(title_output)
+        st.markdown('---')
 
         chapter_output = generated_output[1]['task_output']
-        st.subheader('Suggested Chapter')
+        st.header("Suggested Chapter's")
         st.write(chapter_output)
+        st.markdown('---')
 
         writing_tips = generated_output[2]['task_output']
-        st.subheader('Writing Tips')
+        st.header('Writing Tips')
         st.write(writing_tips)
+        st.markdown('---')
 
-        image_file_name = generated_output[1]['task_output'].local_file_path
-        st.subheader('Book Cover Page')
+        image_file_name = generated_output[3]['task_output'].local_file_path
+        st.header('Book Cover Page')
         st.image(image_file_name, caption='Book Writing Assistant - Lyzr') 
         
     with st.expander("ℹ️ - About this App"):
